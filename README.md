@@ -13,7 +13,7 @@
 > <p><a href="https://www.youtube.com/channel/UCigq8CVltGNAM-hs6cAC8mw"> <img src="https://telegra.ph/file/c54751325802bfa2313b9.jpg" width="220""/></a></p>
   
 # Deploy
-<p><a href="https://heroku.com/deploy"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
+<p><a href="https://heroku.com/deploy?template=https://github.com/scriptkiddo69/deegram-1/tree/master)"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a></p>
 
 # Credits
 - [aykxt](https://github.com/aykxt) for deethon
