@@ -18,7 +18,10 @@ inline_search_buttons = [
     [Button.inline('❌')]
 ]
 
-
+async def stats(event: NewMessage.Event):
+    scope=types.BotCommandScopeDefault(),
+    lang_code='en'
+    
 
 @bot.on(NewMessage(pattern='/start'))
 async def start(event: NewMessage.Event):
