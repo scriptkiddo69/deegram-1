@@ -16,6 +16,10 @@ inline_search_buttons = [
     [Button.inline('❌')]
 ]
 
+def __init__(event, scope=None, lang_code="en"):
+    event.scope = scope
+    event.lang_code = lang_code
+
 
 @bot.on(NewMessage(pattern='/start'))
 async def start(event: NewMessage.Event):
@@ -52,6 +56,7 @@ async def stats(event: NewMessage.Event):
     cpu = psutil.cpu_percent(interval=0.5)
     ram = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
+    
     await event.reply(translate.STATS_MSG.format(current_time, total, used, free, upload, download, cpu, ram, disk))
     raise StopPropagation
 
