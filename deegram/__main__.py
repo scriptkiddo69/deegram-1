@@ -6,7 +6,7 @@ from telethon.events import NewMessage, StopPropagation
 from telethon.sync import TelegramClient
 from telethon import functions, types
 
-from . import bot, botStartTime, logger, plugins, OWNER_ID
+from .import bot, botStartTime, logger, plugins, OWNER_ID
 from .utils import translate, fetch
 from .utils.bot_utils import get_readable_file_size, get_readable_time
 
@@ -77,9 +77,3 @@ with bot:
     bot.run_until_disconnected()
     logger.info('Bot stopped')
     bot.loop.run_until_complete(fetch.session.close())
-
-with TelegramClient(name, api_id, api_hash) as client:
-    result = client(functions.bots.GetBotCommandsRequest(
-        scope=types.BotCommandScopeDefault(),
-        lang_code='en'
-
