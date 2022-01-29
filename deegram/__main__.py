@@ -3,6 +3,8 @@ import time
 
 from telethon import Button, events
 from telethon.events import NewMessage, StopPropagation
+from telethon.sync import TelegramClient
+from telethon import functions, types
 
 from . import bot, botStartTime, logger, plugins, OWNER_ID
 from .utils import translate, fetch
@@ -16,9 +18,6 @@ inline_search_buttons = [
     [Button.inline('❌')]
 ]
 
-def __init__(event, scope=None, lang_code="en"):
-    event.scope = scope
-    event.lang_code = lang_code
 
 
 @bot.on(NewMessage(pattern='/start'))
@@ -78,3 +77,9 @@ with bot:
     bot.run_until_disconnected()
     logger.info('Bot stopped')
     bot.loop.run_until_complete(fetch.session.close())
+
+with TelegramClient(name, api_id, api_hash) as client:
+    result = client(functions.bots.GetBotCommandsRequest(
+        scope=types.BotCommandScopeDefault(),
+        lang_code='en'
+
